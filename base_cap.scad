@@ -49,7 +49,7 @@ difference() {
             }
 
         }
-    // chamferred corners
+     // chamferred corners
     // coner [x,y] corresponds to the multipler on x
     chamfered_corner(mount_height/2 - chamfer_radius, 
         mount_width/2 - chamfer_radius, 
@@ -75,6 +75,10 @@ difference() {
         [-1, 1], 
         chamfer_radius, 
         mount_thickness);
+        
+    // external mount clearance
+    translate([-55, 0, 0])
+    cube([10, mount_width, mount_thickness], center=true);
     }
 
 }
